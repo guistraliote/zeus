@@ -7,6 +7,7 @@ public class BrandMapper {
 
     public BrandDTO toDto(Brand brand) {
         return BrandDTO.builder()
+                .withId(brand.getId())
                 .withName(brand.getName())
                 .withDescription(brand.getDescription())
                 .build();

@@ -1,16 +1,16 @@
-package net.guistraliote.zeus.brand;
+package net.guistraliote.zeus.category;
 
 import lombok.*;
-
-import java.io.Serializable;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder(setterPrefix = "with")
-public class BrandDTO implements Serializable {
+public class CategoryDTO {
     private Long id;
     private String name;
-    private String description;
+    private Long parentId;
+    private String level;
+    private String path;
 }
