@@ -3,7 +3,6 @@ package net.guistraliote.zeus.brand;
 import lombok.*;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
 
 @Getter
 @Setter
