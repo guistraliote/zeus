@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: zeus
+
+  datasource:
+    url: jdbc:postgresql://localhost:5440/zeus
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  security:
+    user:
+      name: admin
+      password: admin
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
