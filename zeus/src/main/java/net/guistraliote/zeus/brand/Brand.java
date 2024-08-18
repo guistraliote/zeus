@@ -24,6 +24,10 @@ public class Brand {
     private String name;
 
     private String description;
+
+    @Column(name = "created_at")
     private LocalDateTime createdAt;
-    private LocalDateTime updateAt;
+
+    @Column(name = "updated_at")
+    private LocalDateTime updatedAt;
 }
