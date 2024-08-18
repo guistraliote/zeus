@@ -1,10 +1,10 @@
-package net.guistraliote.zeus.brand;
+package net.guistraliote.zeus.balance;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.*;
+import net.guistraliote.zeus.user.User;
 
-
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Getter
@@ -13,17 +13,24 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
-@Entity(name = "brand")
-public class Brand {
+@Entity(name = "balance")
+public class Balance {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull(message = "O nome da marca deve ser preenchido.")
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
     private String name;
 
-    private String description;
+    @Column(name = "current_amount")
+    private BigDecimal currentAmount;
+
+    @Column(name = "previous_amount")
+    private BigDecimal previousAmount;
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;

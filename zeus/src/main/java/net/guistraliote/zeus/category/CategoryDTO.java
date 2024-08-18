@@ -2,6 +2,8 @@ package net.guistraliote.zeus.category;
 
 import lombok.*;
 
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -13,4 +15,5 @@ public class CategoryDTO {
     private Long parentId;
     private String level;
     private String path;
+    private List<CategoryDTO> children;
 }
