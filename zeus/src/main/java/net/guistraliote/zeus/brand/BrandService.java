@@ -64,7 +64,7 @@ public class BrandService {
                 .withName(validateBrandName(brandDTO, existingBrand))
                 .withDescription(validateBrandDescription(brandDTO, existingBrand))
                 .withCreatedAt(existingBrand.getCreatedAt())
-                .withUpdateAt(LocalDateTime.now())
+                .withUpdatedAt(LocalDateTime.now())
                 .build();
 
         Brand savedBrand = brandRepository.save(brandToUpdate);

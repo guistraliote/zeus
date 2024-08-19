@@ -2,7 +2,7 @@ package net.guistraliote.zeus.balance;
 
 import jakarta.persistence.*;
 import lombok.*;
-import net.guistraliote.zeus.user.User;
+import net.guistraliote.zeus.user.InternalUser;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -21,8 +21,8 @@ public class Balance {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    @JoinColumn(name = "internal_user_id", nullable = false)
+    private InternalUser internalUser;
 
     private String name;
 

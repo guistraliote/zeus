@@ -15,8 +15,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
-@Entity(name = "user")
-public class User {
+@Entity(name = "internal_user")
+public class InternalUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,25 +26,13 @@ public class User {
     private String email;
     private String password;
 
-    @OneToMany(
-            mappedBy = "user",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
-    )
+    @OneToMany(mappedBy = "internalUser", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Balance> balances;
 
-    @OneToMany
-            (mappedBy = "user",
-                    cascade = CascadeType.ALL,
-                    orphanRemoval = true
-            )
+    @OneToMany(mappedBy = "internalUser", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Income> incomes;
 
-    @OneToMany(
-            mappedBy = "user",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
-    )
+    @OneToMany(mappedBy = "internalUser", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Outcome> outcomes;
 
     @Column(name = "created_at")
@@ -53,3 +41,4 @@ public class User {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 }
+
