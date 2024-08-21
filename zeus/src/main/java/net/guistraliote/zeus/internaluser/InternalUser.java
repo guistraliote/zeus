@@ -1,4 +1,4 @@
-package net.guistraliote.zeus.user;
+package net.guistraliote.zeus.internaluser;
 
 import jakarta.persistence.*;
 import lombok.*;

@@ -2,7 +2,7 @@ package net.guistraliote.zeus.outcome;
 
 import jakarta.persistence.*;
 import lombok.*;
-import net.guistraliote.zeus.user.InternalUser;
+import net.guistraliote.zeus.internaluser.InternalUser;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
