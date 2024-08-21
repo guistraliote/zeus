@@ -32,14 +32,4 @@ public class Category {
 
     private String level;
     private String path;
-
-    public void addChild(Category child) {
-        child.setParent(this);
-        this.children.add(child);
-    }
-
-    public void removeChild(Category child) {
-        child.setParent(null);
-        this.children.remove(child);
-    }
 }
